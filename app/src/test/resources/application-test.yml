@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: "price-api"
+  datasource:
+    url: jdbc:h2:mem:price-api
+    username: price-api
+    password: secret
+    driverClassName: org.h2.Driver
+  jpa:
+    defer-datasource-initialization: true
+
+logging:
+  level:
+    root: DEBUG
+    web: ERROR
+    data: ERROR
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: DEBUG
+    org.hibernate.orm.jdbc.bind: DEBUG
