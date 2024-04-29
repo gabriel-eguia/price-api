@@ -12,10 +12,10 @@ import static com.gme.price.api.architecture.context.ServiceLocator.locate;
 
 public class GetApplicablePriceByProductBrandAndDateQry extends Query<Price> {
 
-	private Long productId;
-	private Long brandId;
-	private LocalDateTime date;
-	private PricePort pricePort;
+	private final Long productId;
+	private final Long brandId;
+	private final LocalDateTime date;
+	private final PricePort pricePort;
 
 	GetApplicablePriceByProductBrandAndDateQry(
 			Long productId,
