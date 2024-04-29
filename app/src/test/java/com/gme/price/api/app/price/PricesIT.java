@@ -2,7 +2,7 @@ package com.gme.price.api.app.price;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.gme.price.api.app.PricesApplication;
+import com.gme.price.api.PricesApplication;
 import com.gme.price.api.inbound.price.rest.dto.PriceRes;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
