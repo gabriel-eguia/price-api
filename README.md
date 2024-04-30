@@ -17,3 +17,5 @@ módulo se podría extraer como una librería y sacarlo fuera del proyecto para 
 Finalmente, se incluye un Dockerfile para generar la imagen Docker de la app. Se podría hacer con el soporte a
 Buildpacks brindado por Spring Boot, pero en mi opinión la configuración de docker debería estar separada de las
 configuraciones de Maven, para separar lo referente al detalle de Ops de las configuraciones de Dev.
+
+Correo de contacto: gabriel.eguia@izertis.com
