@@ -8,12 +8,12 @@
         <version>3.2.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.gme</groupId>
     <artifactId>price-api</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
-    <name>price-api</name>
-    <description>Demo project for prices API</description>
+
     <modules>
         <module>app</module>
         <module>architecture</module>
@@ -21,17 +21,20 @@
         <module>inbound</module>
         <module>outbound</module>
     </modules>
+
     <properties>
         <revision>0.0.1-SNAPSHOT</revision>
         <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.4.1</maven-jar-plugin.version>
         <spring.boot.version>3.2.5</spring.boot.version>
         <lombok.version>1.18.32</lombok.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>
         <h2.version>2.2.224</h2.version>
+        <jackson-datatype.version>2.17.0</jackson-datatype.version>
     </properties>
 
     <build>
@@ -130,13 +133,6 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <type>pom</type>
-                <version>${spring.boot.version}</version>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
                 <version>${spring.boot.version}</version>
                 <scope>runtime</scope>
@@ -169,6 +165,10 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
