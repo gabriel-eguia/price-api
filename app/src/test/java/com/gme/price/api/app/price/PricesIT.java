@@ -1,7 +1,6 @@
 package com.gme.price.api.app.price;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.gme.price.api.PricesApplication;
 import com.gme.price.api.inbound.price.rest.dto.PriceRes;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -32,6 +31,9 @@ class PricesIT {
 	@Autowired
 	private MockMvc mvc;
 
+	@Autowired
+	private ObjectMapper objectMapper;
+
 	private static Stream<Arguments> pricesParamsAndExpectedResponses() {
 		return Stream.of(
 				Arguments.of(PRODUCT_ID, BRAND_ID, LocalDateTime.of(2020, 6, 14, 10, 0), 35.50),
@@ -56,10 +58,6 @@ class PricesIT {
 	}
 
 	private <T> T mapFromJson(String json) throws IOException {
-
-		ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.registerModule(new JavaTimeModule());
-
 		return objectMapper.readValue(json, (Class<T>) PriceRes.class);
 	}
 }
